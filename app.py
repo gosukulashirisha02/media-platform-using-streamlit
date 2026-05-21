@@ -1,8 +1,7 @@
 import streamlit as st 
 from db_c import conn_obj,cursor_obj
 
-if "user" not in st.session_state:
-    st.session_state.user = None
+
 
 login, signup=st.tabs(
     ["login","signup"]
@@ -13,7 +12,8 @@ dbs=cursor_obj.fetchall()
 for db in dbs:
     st.write(db)
     
-
+if "user" not in st.session_state:
+    st.session_state.user = None
 
 def login_function():
     st.header("Login")
