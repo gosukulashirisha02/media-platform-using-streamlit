@@ -11,6 +11,12 @@ dbs=cursor_obj.fetchall()
 for db in dbs:
     st.write(db)
 
+cursor_obj.execute("show tables")
+dbs=cursor_obj.fetchall() 
+for db in dbs:
+    st.write(db)
+
+
 with login:
     st.header("Login")
     with st.form("Login_forms"):
