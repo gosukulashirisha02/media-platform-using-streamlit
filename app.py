@@ -1,12 +1,6 @@
 import streamlit as st 
 from db_c import conn_obj,cursor_obj
 
-
-
-login, signup=st.tabs(
-    ["login","signup"]
-)
-   
 if "user" not in st.session_state:
     st.session_state.user = None
 
