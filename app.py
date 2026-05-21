@@ -6,6 +6,10 @@ st.title("Media Platform")
 login,signup=st.tabs(
     ["Login","Signup"]
 )
+cursor_obj.execute("show databases")
+dbs=cursor_obj.fetchall()
+for db in dbs:
+    st.write(db)
 
 with login:
     st.header("Login")
@@ -22,6 +26,7 @@ with signup:
         email=st.text_input("Email")
         password=st.text_input("Password",type="password")
         btn=st.form_submit_button("SignUp")
-    
+        
+
         
         
